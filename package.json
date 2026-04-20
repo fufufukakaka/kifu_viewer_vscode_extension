@@ -2,7 +2,7 @@
   "name": "kifu-viewer",
   "displayName": "Kifu Viewer",
   "description": "将棋の棋譜 (.kif) を盤面プレビューで表示・操作する VSCode 拡張機能 / Preview Shogi kifu (.kif) files as an interactive board with move navigation and comment editing.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "fufufukakaka",
   "license": "MIT",
   "icon": "resources/icon.png",
