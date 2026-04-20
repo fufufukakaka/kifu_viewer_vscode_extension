@@ -1,15 +1,39 @@
 {
   "name": "kifu-viewer",
   "displayName": "Kifu Viewer",
-  "description": "Preview Shogi kifu (.kif) files as an interactive board",
+  "description": "将棋の棋譜 (.kif) を盤面プレビューで表示・操作する VSCode 拡張機能 / Preview Shogi kifu (.kif) files as an interactive board with move navigation and comment editing.",
   "version": "0.0.1",
   "publisher": "fufufukakaka",
+  "license": "MIT",
+  "icon": "resources/icon.png",
+  "homepage": "https://github.com/fufufukakaka/kifu_viewer_vscode_extension#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fufufukakaka/kifu_viewer_vscode_extension.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fufufukakaka/kifu_viewer_vscode_extension/issues"
+  },
   "engines": {
     "vscode": "^1.85.0"
   },
   "categories": [
-    "Visualization"
+    "Visualization",
+    "Other"
   ],
+  "keywords": [
+    "shogi",
+    "kifu",
+    "kif",
+    "将棋",
+    "棋譜",
+    "board",
+    "preview"
+  ],
+  "galleryBanner": {
+    "color": "#e7c385",
+    "theme": "light"
+  },
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
@@ -67,12 +91,17 @@
     "build": "node esbuild.js",
     "watch": "node esbuild.js --watch",
     "typecheck": "tsc --noEmit",
-    "vscode:prepublish": "npm run build"
+    "vscode:prepublish": "npm run build",
+    "package": "vsce package",
+    "publish:marketplace": "vsce publish",
+    "publish:openvsx": "ovsx publish"
   },
   "devDependencies": {
     "@types/node": "^20.11.0",
     "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^2.27.0",
     "esbuild": "^0.21.5",
+    "ovsx": "^0.9.1",
     "playwright": "^1.59.1",
     "typescript": "^5.4.5"
   }

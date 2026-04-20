@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f0cf92"/>
+      <stop offset="100%" stop-color="#d7a764"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <rect width="256" height="256" fill="#1f1f1f"/>
+  <g filter="url(#shadow)">
+    <!-- Shogi piece pentagon shape. Pointed top, flat bottom. -->
+    <polygon
+      points="128,28 196,74 180,222 76,222 60,74"
+      fill="url(#wood)"
+      stroke="#3b2a14"
+      stroke-width="6"
+      stroke-linejoin="round"/>
+  </g>
+  <text
+    x="128"
+    y="170"
+    font-family="'Hiragino Mincho ProN','Yu Mincho','Noto Serif JP','Noto Serif CJK JP','Songti SC','SimSun',serif"
+    font-size="150"
+    font-weight="700"
+    text-anchor="middle"
+    fill="#1a1208">歩</text>
+</svg>
