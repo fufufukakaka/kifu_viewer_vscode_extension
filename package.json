@@ -1,0 +1,79 @@
+{
+  "name": "kifu-viewer",
+  "displayName": "Kifu Viewer",
+  "description": "Preview Shogi kifu (.kif) files as an interactive board",
+  "version": "0.0.1",
+  "publisher": "fufufukakaka",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Visualization"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "kifuViewer.showPreview",
+        "title": "Kifu: Show Preview",
+        "icon": "$(open-preview)"
+      },
+      {
+        "command": "kifuViewer.showPreviewToSide",
+        "title": "Kifu: Show Preview to the Side",
+        "icon": "$(open-preview)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "kifuViewer.showPreviewToSide",
+          "when": "resourceExtname == .kif",
+          "group": "navigation"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "kifuViewer.showPreview",
+          "when": "resourceExtname == .kif",
+          "group": "navigation"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "kifuViewer.showPreview",
+          "when": "resourceExtname == .kif"
+        },
+        {
+          "command": "kifuViewer.showPreviewToSide",
+          "when": "resourceExtname == .kif"
+        }
+      ]
+    },
+    "languages": [
+      {
+        "id": "kifu",
+        "extensions": [
+          ".kif"
+        ],
+        "aliases": [
+          "Kifu",
+          "kifu"
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "build": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "typecheck": "tsc --noEmit",
+    "vscode:prepublish": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "esbuild": "^0.21.5",
+    "playwright": "^1.59.1",
+    "typescript": "^5.4.5"
+  }
+}
